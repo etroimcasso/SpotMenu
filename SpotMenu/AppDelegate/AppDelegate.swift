@@ -11,8 +11,8 @@ import Carbon.HIToolbox
 import Cocoa
 import MusicPlayer
 import Sparkle
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
@@ -68,7 +68,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - AppDelegate methods
 
     func applicationDidFinishLaunching(_: Notification) {
-        Fabric.with([Crashlytics.self])
+//        Fabric.with([Crashlytics.self])
         
         UserPreferences.initializeUserPreferences()
 
@@ -250,7 +250,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 closePopover(sender)
             }
             statusItem.menu = menu
-            statusItem.popUpMenu(menu)
+//            statusItem.popUpMenu(menu)
+            statusItem.menu?.popUp(positioning: nil, at: NSPoint(x: 0, y: statusItem.button!.frame.height ), in: statusItem.button! )
 
             // This is critical, otherwise clicks won't be processed again
             statusItem.menu = nil
@@ -264,9 +265,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func checkForUpdates(_: NSMenuItem) {
-        SUUpdater.shared().checkForUpdates(nil)
-    }
+//    @objc func checkForUpdates(_: NSMenuItem) {
+//        SUUpdater.shared().checkForUpdates(nil)
+//    }
 
     // MARK: - Private methods
 
