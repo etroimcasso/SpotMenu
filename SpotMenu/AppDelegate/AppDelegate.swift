@@ -29,8 +29,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // private let popoverDelegate = PopOverDelegate()
 
     private var eventMonitor: EventMonitor?
-    private let issuesURL = URL(string: "https://github.com/kmikiy/SpotMenu/issues")
-    private let kmikiyURL = URL(string: "https://github.com/kmikiy")
+    private let issuesURL = URL(string: "https://github.com/etroimcasso/SpotMenu/issues")
+    private let developerURL = URL(string: "https://github.com/kmikiy")
     private let menu = StatusMenu().menu
     private let spotMenuIcon = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImage"))
     private let spotMenuIconItunes = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImageItunes"))
@@ -228,9 +228,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func openKmikiy(_: NSMenuItem) {
-        openURL(url: kmikiyURL)
-    }
+//    @objc func openKmikiy(_: NSMenuItem) {
+//        openURL(url: kmikiyURL)
+//    }
 
     @objc func openIssues(_: NSMenuItem) {
         openURL(url: issuesURL)
