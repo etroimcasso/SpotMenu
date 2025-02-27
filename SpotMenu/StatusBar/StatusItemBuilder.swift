@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class StatusItemBuilder {
 
@@ -78,14 +79,16 @@ final class StatusItemBuilder {
     }
 
     func showPlayingIcon(v: Bool) -> StatusItemBuilder {
+
         if !v {
-            playingIcon = ""
+            playingIcon = " "
             return self
         }
         if isPlaying {
-            playingIcon = "♫ "
+//            playingIcon = String("\(Image(systemName: "play.fill"))")
+            playingIcon = " 􀊄 "
         } else {
-            playingIcon = ""
+            playingIcon = " 􀊆 "
         }
         return self
     }

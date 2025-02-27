@@ -10,7 +10,7 @@ import AppKit.NSAppearance
 import Carbon.HIToolbox
 import Cocoa
 import MusicPlayer
-import Sparkle
+//import Sparkle
 //import Fabric
 //import Crashlytics
 
@@ -172,7 +172,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             artist: musicPlayerManager.currentPlayer?.currentTrack?.artist,
             albumName: musicPlayerManager.currentPlayer?.currentTrack?.album,
             isPlaying: musicPlayerManager.currentPlayer?.playbackState == MusicPlaybackState.playing)
-            .hideWhenPaused(v: false)
+//            .hideWhenPaused(v: false)
             .showTitle(v: true)
             .showAlbumName(v: true)
             .showArtist(v: true)
@@ -204,7 +204,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             artist: musicPlayerManager.currentPlayer?.currentTrack?.artist,
             albumName: musicPlayerManager.currentPlayer?.currentTrack?.album,
             isPlaying: musicPlayerManager.currentPlayer?.playbackState == MusicPlaybackState.playing)
-            .hideWhenPaused(v: UserPreferences.hideTitleArtistWhenPaused)
+//            .hideWhenPaused(v: UserPreferences.hideTitleArtistWhenPaused)
             .showTitle(v: UserPreferences.showTitle)
             .showAlbumName(v: UserPreferences.showAlbumName)
             .showArtist(v: UserPreferences.showArtist)
@@ -219,6 +219,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func openPrefs(_: NSMenuItem) {
         preferencesController = (NSStoryboard(name: NSStoryboard.Name(rawValue: "Preferences"), bundle: nil).instantiateInitialController() as! NSWindowController)
+//        NSApplication.shared.activate(ignoringOtherApps: true)
         preferencesController?.showWindow(self)
     }
 

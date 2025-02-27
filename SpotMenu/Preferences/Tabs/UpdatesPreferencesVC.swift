@@ -37,9 +37,9 @@ final class UpdatesPreferencesVC: NSViewController {
         moreInformation.stringValue = defaultMoreInformationText
         initButtonStates()
         initButtonHovers()
-        if SUUpdater.shared().lastUpdateCheckDate != nil {
-            lastUpdateCheckLabel.stringValue = SUUpdater.shared().lastUpdateCheckDate.asString()
-        }
+//        if SUUpdater.shared().lastUpdateCheckDate != nil {
+//            lastUpdateCheckLabel.stringValue = SUUpdater.shared().lastUpdateCheckDate.asString()
+//        }
     }
 
     private func initLabels() {
