@@ -12,7 +12,7 @@ import SwiftUI
 final class StatusItemBuilder {
 
     // MARK: - Properties
-
+    
     private var title = ""
     private var artist = ""
     private var albumName = ""
@@ -79,17 +79,18 @@ final class StatusItemBuilder {
     }
 
     func showPlayingIcon(v: Bool) -> StatusItemBuilder {
+        playingIcon = ""
 
-        if !v {
-            playingIcon = " "
-            return self
-        }
-        if isPlaying {
-//            playingIcon = String("\(Image(systemName: "play.fill"))")
-            playingIcon = " 􀊄 "
-        } else {
-            playingIcon = " 􀊆 "
-        }
+//        if !v {
+//            playingIcon = " "
+//            return self
+//        }
+//        if isPlaying {
+////            playingIcon = String("\(Image(systemName: "play.fill"))")
+//            playingIcon = " 􀊄 "
+//        } else {
+//            playingIcon = " 􀊆 "
+//        }
         return self
     }
 

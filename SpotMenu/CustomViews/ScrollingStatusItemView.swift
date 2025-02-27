@@ -20,6 +20,12 @@ class ScrollingStatusItemView: NSView {
     }
 
     var lengthHandler: StatusItemLengthUpdate?
+    
+//    let spotifyIcon: NSImage {
+//        didSet {
+//            
+//        }
+//    }
 
     var icon: NSImage? {
         didSet {
@@ -58,7 +64,7 @@ class ScrollingStatusItemView: NSView {
             scrollingTextView.length = length
         }
     }
-
+    
     private lazy var iconImageView: NSImageView = {
         let imageView = NSImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,6 +117,7 @@ class ScrollingStatusItemView: NSView {
 
 private extension ScrollingStatusItemView {
     func loadSubviews() {
+//        addSubview(iconImageView)
         addSubview(iconImageView)
         addSubview(scrollingTextView)
 

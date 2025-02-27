@@ -10,6 +10,7 @@ import AppKit.NSAppearance
 import Carbon.HIToolbox
 import Cocoa
 import MusicPlayer
+import Foundation
 //import Sparkle
 //import Fabric
 //import Crashlytics
@@ -210,9 +211,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             .showArtist(v: UserPreferences.showArtist)
             .showPlayingIcon(v: UserPreferences.showPlayingIcon)
             .getString()
-        if lastStatusTitle != statusItemTitle {
+        
+//        if lastStatusTitle != statusItemTitle {
             updateTitle(newTitle: statusItemTitle)
-        }
+//        }
     }
 
     // MARK: - Popover methods
@@ -290,7 +292,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func updateTitle(newTitle: String) {
-        scrollingStatusItemView.icon = chooseIcon(musicPlayerName: musicPlayerManager.currentPlayer?.name)
+//        scrollingStatusItemView.icon = chooseIcon(musicPlayerName: musicPlayerManager.currentPlayer?.name)
+        scrollingStatusItemView.icon = chooseIcon(isPlaying: musicPlayerManager.currentPlayer?.playbackState == MusicPlaybackState.playing)
         scrollingStatusItemView.text = newTitle
 
         lastStatusTitle = newTitle
@@ -311,6 +314,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             return spotMenuIcon
         }
     }
+    
+    private func chooseIcon(isPlaying: Bool) -> NSImage! {
+        let imageName: String = isPlaying ? "play.fill" : "pause.fill"
+        return NSImage.init(systemSymbolName: imageName, accessibilityDescription: "")
+    }
+
 
     private func showPopover(_: AnyObject?) {
 
